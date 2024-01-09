@@ -17,7 +17,21 @@ function blobToBase64(blob) {
 }
 
 function START_RECORDING(params) {
-	const { index, video, audio, frameSize, audioBitsPerSecond, videoBitsPerSecond, bitsPerSecond, mimeType, videoConstraints } = params
+	const { 
+		index, 
+		video, 
+		audio, 
+		frameSize, 
+		audioBitsPerSecond, 
+		videoBitsPerSecond, 
+		bitsPerSecond, 
+		mimeType, 
+		videoConstraints,
+		minWidth,
+		minHeight,
+		maxWidth,
+		maxHeight
+	 } = params
 	console.log("START_RECORDING_PARAMS:", params)
 
 	chrome.tabCapture.capture(
@@ -33,6 +47,10 @@ function START_RECORDING(params) {
 			videoConstraints: {
 				mandatory: {
 					chromeMediaSource: 'tab',
+					minWidth: minWidth,
+					minHeight: minHeight,
+					maxWidth: maxWidth,
+					maxHeight: maxHeight,
 				}
 			}
 		},

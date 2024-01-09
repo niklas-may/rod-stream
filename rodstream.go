@@ -28,6 +28,10 @@ type StreamConstraints struct {
 	VideoBitsPerSecond int    `json:"videoBitsPerSecond,omitempty"`
 	BitsPerSecond      int    `json:"bitsPerSecond,omitempty"`
 	FrameSize          int    `json:"frameSize,omitempty"`
+	MinWidth           int    `json:"minWidth,omitempty"`
+	MinHeight          int    `json:"minHeight,omitempty"`
+	MaxWidth           int    `json:"maxWidth,omitempty"`
+	MaxHeight          int    `json:"maxHeight,omitempty"`
 }
 
 type PageInfo struct {
@@ -169,6 +173,10 @@ func MustGetStream(page *PageInfo, streamConstraints StreamConstraints, ch chan 
 			videoBitsPerSecond: null,
 			bitsPerSecond: null,
 			frameSize: 500,
+			minWidth: 1920,
+          	minHeight: 1080,
+          	maxWidth: 1920,
+          	maxHeight: 1080 
 		}
 		// Index for recording
 		contraints.index = pageId

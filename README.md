@@ -5,7 +5,7 @@ An extension of [go-rod](https://github.com/go-rod/rod) to retrieve audio or vid
 ## Installation
 
 ```sh
-$ go get github.com/navicstein/rod-stream
+$ go get github.com/niklas-may/rod-stream
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ import (
 	"github.com/go-rod/rod"
 	"github.com/go-rod/stealth"
 
-	rodstream "github.com/navicstein/rod-stream"
+	rodstream "github.com/niklas-may/rod-stream"
 )
 
 func main() {
@@ -79,6 +79,10 @@ go func() {
 		VideoBitsPerSecond: 2500000,
 		BitsPerSecond:      8000000, // 1080p https://support.google.com/youtube/answer/1722171?hl=en#zippy=%2Cbitrate
 		FrameSize:          1000,    // option passed to mediaRecorder.start(frameSize)
+		MinWidth:           1080,
+		MinHeight:          1920,
+		MaxWidth:           1080,
+		MaxHeight:          1920,	
 	}
 	// Example: Saving to filesystem
 	videoFile, err := os.Create("./videos/video.webm")

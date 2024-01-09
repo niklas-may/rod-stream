@@ -46,6 +46,10 @@ func TestMustGetStream(t *testing.T) {
 		VideoBitsPerSecond: 2500000,
 		BitsPerSecond:      8000000,
 		FrameSize:          1000,
+		MinWidth:           1080,
+		MinHeight:          1920,
+		MaxWidth:           1080,
+		MaxHeight:          1920,
 	}
 
 	page := browser.MustPage()
