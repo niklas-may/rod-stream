@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/go-rod/rod"
-	rodstream "github.com/navicstein/rod-stream"
+	rodstream "github.com/niklas-may/rod-stream"
 )
 
 func TestMustPrepareLauncher(t *testing.T) {
